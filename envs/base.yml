@@ -1,0 +1,49 @@
+# =============================================================================
+# BASE.YML - Dependencias básicas para análisis de microbioma
+# =============================================================================
+# Autor: José A. Vega-Jaén
+# Propósito: Entorno base con dependencias fundamentales para Google Colab
+# Uso: conda env create -f base.yml
+# =============================================================================
+
+name: microbioma-base
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python y herramientas básicas
+  - python=3.11
+  - pip
+  - wget
+  - curl
+  - git
+  
+  # Análisis y manipulación de datos
+  - pandas>=2.0
+  - numpy>=1.24
+  - scipy>=1.10
+  
+  # Visualización
+  - matplotlib>=3.7
+  - seaborn>=0.12
+  - plotly>=5.0
+  
+  # Utilidades de consola
+  - rich>=13.0
+  
+  # Jupyter y notebooks
+  - jupyter
+  - notebook
+  - ipywidgets
+  
+  # Herramientas de sistema
+  - unzip
+  - tar
+  - gzip
+  
+  # Paquetes adicionales vía pip
+  - pip:
+    - kaleido  # Para exportar gráficos de plotly
+    - ipykernel  # Para kernels de Jupyter
+    - tqdm  # Barras de progreso

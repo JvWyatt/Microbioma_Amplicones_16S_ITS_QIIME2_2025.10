@@ -1,0 +1,81 @@
+# =============================================================================
+# QIIME2.YML - Dependencias específicas de QIIME 2 2025.10
+# =============================================================================
+# Autor: José A. Vega-Jaén
+# Propósito: Entorno completo de QIIME 2 con plugins esenciales
+# Uso: conda env create -f qiime2.yml
+# Nota: Este archivo complementa la instalación oficial de QIIME 2
+# =============================================================================
+
+name: qiime2-2025.10-extended
+channels:
+  - qiime2
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  # Python base
+  - python=3.11
+  
+  # QIIME 2 core (se instala desde el YAML oficial)
+  # Aquí solo agregamos plugins y dependencias adicionales
+  
+  # Plugins esenciales de QIIME 2
+  - empress  # Visualización de árboles filogenéticos
+  - q2-longitudinal  # Análisis longitudinales
+  - q2-sample-classifier  # Clasificación de muestras
+  - q2-cutadapt  # Remoción de adaptadores
+  
+  # Herramientas de análisis externas
+  - fastqc  # Control de calidad de secuencias
+  - multiqc  # Reportes agregados de calidad
+  - blast  # Búsquedas de similitud
+  - muscle  # Alineamiento múltiple
+  - fasttree  # Construcción de árboles filogenéticos
+  
+  # Bases de datos y referencias
+  - silva-database  # Base de datos SILVA (si está disponible)
+  - greengenes2  # Base de datos Greengenes2 (si está disponible)
+  
+  # Análisis estadístico
+  - r-base>=4.2  # R para análisis estadísticos avanzados
+  - r-vegan  # Análisis de diversidad
+  - r-phyloseq  # Análisis de datos de microbioma
+  - r-ggplot2  # Visualización avanzada
+  - r-dplyr  # Manipulación de datos
+  - r-tidyr  # Datos ordenados
+  
+  # Visualización avanzada
+  - plotly>=5.0
+  - bokeh>=3.0
+  - seaborn>=0.12
+  - matplotlib>=3.7
+  
+  # Utilidades de bioinformática
+  - biopython>=1.81
+  - pysam  # Manipulación de archivos SAM/BAM
+  - scikit-learn>=1.3  # Machine learning
+  
+  # Herramientas de sistema
+  - wget
+  - curl
+  - unzip
+  - tar
+  
+  # Jupyter y notebooks
+  - jupyter
+  - notebook
+  - ipywidgets
+  - nb_conda_kernels  # Integración conda-jupyter
+  
+  # Paquetes adicionales vía pip
+  - pip:
+    - qiime2-galaxy  # Integración con Galaxy (si está disponible)
+    - kaleido  # Exportar gráficos plotly
+    - rich>=13.0  # Salida colorida en consola
+    - typer  # CLI moderno
+    - click  # Interfaces de línea de comandos
+    - tqdm  # Barras de progreso
+    - openpyxl  # Leer/escribir Excel
+    - xlsxwriter  # Escribir Excel avanzado
