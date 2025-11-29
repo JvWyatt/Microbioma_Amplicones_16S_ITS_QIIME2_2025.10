@@ -30,8 +30,13 @@ fi
 export PATH="/opt/miniconda/bin:$PATH"
 
 # =============================================================================
-# 2. ACTUALIZAR CONDA
+# 2. ACEPTAR TÉRMINOS DE SERVICIO Y ACTUALIZAR CONDA
 # =============================================================================
+echo "📋 Aceptando términos de servicio de Anaconda..."
+conda config --set allow_conda_downgrades true
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main 2>/dev/null || true
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r 2>/dev/null || true
+
 echo "🔄 Actualizando conda..."
 conda update conda -y
 
