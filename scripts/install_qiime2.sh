@@ -10,7 +10,7 @@
 set -e
 
 echo "🧬 Instalando QIIME 2 2025.10 Amplicon Distribution..."
-echo "=" * 60
+echo "============================================================"
 
 # Asegurar PATH
 export PATH="/opt/miniconda/bin:$PATH"
@@ -20,7 +20,12 @@ export PATH="/opt/miniconda/bin:$PATH"
 # =============================================================================
 echo "📥 Descargando configuración oficial de QIIME 2..."
 ENV_URL="https://data.qiime2.org/distro/amplicon/qiime2-amplicon-2025.10-py311-linux-conda.yml"
-wget -q $ENV_URL -O /tmp/qiime2-amplicon.yml
+
+if ! wget -q "$ENV_URL" -O /tmp/qiime2-amplicon.yml; then
+    echo "❌ Error al descargar el archivo de configuración"
+    echo "💡 Verifica tu conexión a internet"
+    exit 1
+fi
 
 echo "✅ Archivo de configuración descargado"
 
@@ -54,9 +59,9 @@ rm -f /tmp/qiime2-amplicon.yml
 conda clean -a -y
 
 echo ""
-echo "=" * 60
+echo "============================================================"
 echo "🎉 ¡QIIME 2 2025.10 instalado y listo para usar!"
-echo "=" * 60
+echo "============================================================"
 echo ""
 echo "💡 Para activar QIIME 2 en futuras sesiones:"
 echo "   conda activate qiime2-amplicon-2025.10"

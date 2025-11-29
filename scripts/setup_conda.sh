@@ -9,7 +9,7 @@
 set -e
 
 echo "📦 Configurando Miniconda para QIIME 2..."
-echo "=" * 60
+echo "============================================================"
 
 # =============================================================================
 # 1. INSTALAR MINICONDA (si no está presente)
@@ -50,6 +50,6 @@ echo "🔄 Actualizando conda a la última versión..."
 conda update conda -y
 
 echo ""
-echo "=" * 60
+echo "============================================================"
 echo "✅ ¡Conda configurado y listo!"
-echo "=" * 60
+echo "============================================================"
