@@ -69,10 +69,21 @@ Este repositorio proporciona un **entorno completo** y **fácil de usar** para a
 
 ### Opción 1: Google Colab (Recomendado) 🌟
 
-1. **Haz clic** en el botón de Colab arriba ⬆️
-2. **Guarda** una copia en tu Google Drive
+#### 📱 Método 1: Botón Directo
+1. **Haz clic** en el botón [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JvWyatt/Microbioma_Amplicones_16S_ITS_QIIME2_2025.10/blob/main/notebooks/Microbioma_Amplicones_16S_ITS_QIIME2_2025.10.ipynb) arriba ⬆️
+2. **Guarda** una copia en tu Google Drive (`Archivo > Guardar una copia en Drive`)
 3. **Ejecuta** las celdas en orden
 4. **¡Empieza** a analizar!
+
+#### 🔄 Método 2: Enlace Directo (Fuerza Actualización)
+Si Colab no muestra la última versión, usa este enlace directo:
+
+**[🚀 Abrir Notebook en Colab (Siempre Actualizado)](https://colab.research.google.com/github/JvWyatt/Microbioma_Amplicones_16S_ITS_QIIME2_2025.10/blob/main/notebooks/Microbioma_Amplicones_16S_ITS_QIIME2_2025.10.ipynb)**
+
+> 💡 **Tip**: Si ves una versión antigua en Colab:
+> - Limpia caché del navegador (Ctrl+Shift+Delete)
+> - O abre el enlace en modo incógnito
+> - O usa el enlace directo de arriba
 
 ### Opción 2: Instalación Local
 
