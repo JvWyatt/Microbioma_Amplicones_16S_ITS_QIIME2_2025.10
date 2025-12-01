@@ -59,8 +59,20 @@ def install_with_progress(script_name, task_name, estimated_time):
         return True, stdout
     else:
         print(f"❌ Error en {task_name}")
-        error_msg = stderr[-500:] if stderr else "Error desconocido"
-        print(f"   {error_msg}\n")
+        print(f"   Código de error: {process.returncode}\n")
+        
+        # Mostrar stdout primero (mensajes del script)
+        if stdout:
+            print("📋 Salida del script:")
+            print(stdout[-1000:] if len(stdout) > 1000 else stdout)
+            print()
+        
+        # Mostrar stderr si hay
+        if stderr:
+            print("⚠️ Errores detectados:")
+            print(stderr[-1000:] if len(stderr) > 1000 else stderr)
+            print()
+        
         return False, stderr
 
 

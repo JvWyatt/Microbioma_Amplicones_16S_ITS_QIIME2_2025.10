@@ -37,7 +37,8 @@ echo "🏗️  Creando entorno conda e instalando QIIME 2..."
 echo "⏱️  Esto puede tardar 5-10 minutos..."
 echo ""
 
-conda env create -n qiime2-amplicon-2025.10 --file /tmp/qiime2-amplicon.yml > /dev/null 2>&1
+# Instalar QIIME 2 (mostrar solo errores críticos)
+conda env create -n qiime2-amplicon-2025.10 --file /tmp/qiime2-amplicon.yml --quiet
 
 echo ""
 echo "✅ QIIME 2 Amplicon 2025.10 instalado correctamente"
@@ -47,8 +48,7 @@ echo "✅ QIIME 2 Amplicon 2025.10 instalado correctamente"
 # =============================================================================
 echo ""
 echo "🔍 Verificando instalación..."
-source activate qiime2-amplicon-2025.10
-qiime info > /dev/null 2>&1
+conda run -n qiime2-amplicon-2025.10 qiime --version > /dev/null
 
 # =============================================================================
 # 4. LIMPIAR ARCHIVOS TEMPORALES
